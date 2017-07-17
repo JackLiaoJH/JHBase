@@ -3,18 +3,16 @@ package com.jhworks.jhbasedemo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.jhworks.jhbase.base.BaseActivity;
 import com.jhworks.jhbase.utils.LogUtils;
-import com.jhworks.jhbasedemo.R;
-import com.jhworks.jhbase.utils.RandomUtils;
-import com.jhworks.jhbase.utils.ToastUtils;
+import com.jhworks.jhbasedemo.activity.TestActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     public void toast_test(View view) {
 //        ToastUtils.showSingle(this, "hello--->" + RandomUtils.getRandom(100));
 //        LogUtils.i();
+        Bundle bundle = new Bundle();
+        bundle.putString("test_data", "hhhhhhhhhhh-------------->");
+        openActivity(TestActivity.class, bundle);
     }
 
     @Override
