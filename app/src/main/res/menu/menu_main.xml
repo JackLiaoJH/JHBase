@@ -2,9 +2,38 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.jhworks.jhbasedemo.MainActivity">
+
+    <item
+        android:id="@+id/action_shop_card"
+        android:icon="@drawable/ic_shopping_cart_while"
+        android:orderInCategory="90"
+        android:title="搜索"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_while"
+        android:orderInCategory="100"
+        android:title="搜索"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="90"
         android:title="@string/action_settings"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_a"
+        android:orderInCategory="100"
+        android:title="a"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_b"
+        android:orderInCategory="100"
+        android:title="b"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_c"
+        android:orderInCategory="100"
+        android:title="c"
         app:showAsAction="never"/>
 </menu>

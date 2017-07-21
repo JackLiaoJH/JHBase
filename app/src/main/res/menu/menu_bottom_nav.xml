@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_nav_1"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_while"
+        android:title="Home"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/bottom_nav_2"
+        android:enabled="true"
+        android:icon="@drawable/ic_cloud_circle_while"
+        android:title="Goods"
+        app:showAsAction="always"/>
+
+
+
+    <item
+        android:id="@+id/bottom_nav_3"
+        android:enabled="true"
+        android:icon="@drawable/ic_person_while"
+        android:title="My"
+        app:showAsAction="always"/>
+
+</menu>

@@ -1,4 +1,60 @@
 <resources>
     <string name="app_name">JHBase</string>
     <string name="action_settings">Settings</string>
+
+
+    <string name="error_no_content">No content!!!!!!!!!!!!!1</string>
+    <string name="error_no_net">No Net!!!!!!!!!!!!!!!</string>
+    <string name="error_net">Network Error!!!!!!!!!!!!!</string>
+
+
+    <array name="home_array">
+        <item>http://img2.imgtn.bdimg.com/it/u=754158925,2812027717&amp;fm=200&amp;gp=0.jpg</item>
+        <item>http://imgsrc.baidu.com/imgad/pic/item/b03533fa828ba61e5e6d4c0d4b34970a304e5915.jpg
+        </item>
+        <item>http://image5.tuku.cn/pic/wallpaper/fengjing/meirenshenqiumeijingipadbizhi/002.jpg
+        </item>
+        <item>http://img2.3lian.com/2014/f2/15/d/47.jpg</item>
+        <item>http://pic99.nipic.com/file/20160527/5661999_000706211000_2.jpg</item>
+        <item>http://img5.duitang.com/uploads/item/201409/15/20140915014035_iU3nX.jpeg</item>
+        <item>http://www.bz55.com/uploads/allimg/100713/1041262537-0.jpg</item>
+        <item>http://www.js.xinhuanet.com/titlepic/1116228375_1439351466123_title1n.jpg</item>
+        <item>http://s8.sinaimg.cn/mw690/0017liEsgy6PsnSmpAH97&amp;690</item>
+        <item>http://file02.16sucai.com/d/file/2014/1027/31be1dd7cc2d4631aa1d99edfb26b080.jpg</item>
+        <item>http://pic38.nipic.com/20140224/2572038_123852822000_2.jpg</item>
+        <item>
+            http://imgsrc.baidu.com/image/c0%3Dshijue1%2C0%2C0%2C294%2C40/sign=c714a4fb24738bd4d02cba72c9e2eda3/b21c8701a18b87d63adf70390d0828381f30fd73.jpg
+        </item>
+        <item>http://pic8.nipic.com/20100720/3795628_150649933142_2.jpg</item>
+    </array>
+
+
+    <array name="main2_array">
+        <item>function 1</item>
+        <item>function 2</item>
+        <item>function 3</item>
+        <item>function 4</item>
+        <item>function 5</item>
+        <item>function 6</item>
+        <item>function 7</item>
+        <item>function 8</item>
+        <item>function 9</item>
+        <item>function 0</item>
+        <item>function 11</item>
+        <item>function 12</item>
+        <item>function 13</item>
+        <item>function 14</item>
+        <item>function 15</item>
+        <item>function 16</item>
+        <item>function 17</item>
+        <item>function 18</item>
+        <item>function 19</item>
+        <item>function 20</item>
+        <item>function 21</item>
+        <item>function 22</item>
+        <item>function 23</item>
+        <item>function 24</item>
+        <item>function 25</item>
+        <item>function 26</item>
+    </array>
 </resources>

@@ -3,6 +3,8 @@ package com.jhworks.jhbase.base;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.jhworks.jhbase.R;
 
@@ -13,20 +15,40 @@ import com.jhworks.jhbase.R;
  * author: jacksonliao
  */
 public abstract class BaseFragmentActivity extends BaseActivity {
+
+    private Toolbar mToolbar;
+
     protected BaseFragment mBaseFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         mBaseFragment = getFragment();
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common);
+        mToolbar = getView(R.id.tool_bar);
+        initToolBar(mToolbar);
+        setSupportActionBar(mToolbar);
+
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigationClick();
+            }
+        });
         commitFragment(mBaseFragment);
+    }
+
+    /**
+     * ToolBar返回键处理，如果要自定义返回，则重写该方法
+     */
+    public void onNavigationClick() {
+        finish();
     }
 
     @Override
     protected void initBundleData(@NonNull Bundle bundle) {
         super.initBundleData(bundle);
-//        mBaseFragment.setArguments(bundle);
+        mBaseFragment.setArguments(bundle);
     }
 
     /**
@@ -44,4 +66,7 @@ public abstract class BaseFragmentActivity extends BaseActivity {
 
     /** 获取目标Fragment 界面 */
     protected abstract BaseFragment getFragment();
+
+    /** 定制ToolBar 设置标题，返回图标等等 */
+    protected abstract void initToolBar(Toolbar toolbar);
 }

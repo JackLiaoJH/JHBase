@@ -17,7 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+        <!-- app:layout_scrollFlags="scroll|enterAlways"-->
 
     </android.support.design.widget.AppBarLayout>
 
@@ -28,7 +31,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginBottom="64dp"
+        android:layout_marginRight="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email"/>
+
+
+    <View
+        android:id="@+id/bottom_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:background="@drawable/bottom_shadow"
+        app:layout_behavior="com.jhworks.jhbasedemo.utils.BottomNavigationViewBehavior"/>
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/color_while"
+        app:itemIconTint="@drawable/bottom_nav_item_selector"
+        app:itemTextColor="@drawable/bottom_nav_item_selector"
+        app:layout_behavior="com.jhworks.jhbasedemo.utils.BottomNavigationViewBehavior"
+        app:menu="@menu/menu_bottom_nav"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

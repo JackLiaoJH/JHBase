@@ -78,6 +78,4 @@ public class BaseActivity extends AppCompatActivity {
     protected void initBundleData(@NonNull Bundle bundle) {
 
     }
-
-
 }

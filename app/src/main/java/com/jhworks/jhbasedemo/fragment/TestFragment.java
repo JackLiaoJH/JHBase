@@ -44,7 +44,7 @@ public class TestFragment extends BaseFragment {
         }
     }*/
 
-      @Override
+    @Override
     protected void initBundleData(@NonNull Bundle bundle) {
         super.initBundleData(bundle);
         mTestData = bundle.getString("test_data", null);
@@ -68,7 +68,7 @@ public class TestFragment extends BaseFragment {
 
         if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
-            ToastUtils.show(mContext,"请求权限开始....");
+            ToastUtils.show(mContext, "请求权限开始....");
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     100);
         }

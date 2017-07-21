@@ -55,9 +55,10 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.Wr
     }
 
     public static class WrapperHolder<T> extends RecyclerView.ViewHolder {
-
+        protected Context mContext;
         public WrapperHolder(View itemView) {
             super(itemView);
+            mContext = itemView.getContext();
         }
 
 
