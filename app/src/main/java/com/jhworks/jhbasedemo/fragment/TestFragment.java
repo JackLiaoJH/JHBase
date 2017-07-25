@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 
 import com.jhworks.jhbase.base.BaseFragment;
 import com.jhworks.jhbase.utils.LogUtils;
+import com.jhworks.jhbase.utils.RandomUtils;
 import com.jhworks.jhbase.utils.ToastUtils;
 import com.jhworks.jhbasedemo.R;
+import com.jhworks.jhbasedemo.widget.ErrorView;
 
 /**
  * @apiNote

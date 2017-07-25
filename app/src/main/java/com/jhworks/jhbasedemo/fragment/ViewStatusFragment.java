@@ -8,6 +8,7 @@ import com.jhworks.jhbase.base.BaseFragment;
 import com.jhworks.jhbase.utils.LogUtils;
 import com.jhworks.jhbase.utils.RandomUtils;
 import com.jhworks.jhbasedemo.R;
+import com.jhworks.jhbasedemo.widget.ErrorView;
 
 /**
  * @apiNote
@@ -32,6 +33,7 @@ public class ViewStatusFragment extends BaseFragment {
     protected void initView(View rootView, @Nullable Bundle savedInstanceState) {
         int random = RandomUtils.getRandom(5);
         LogUtils.i("random=%d", random);
+        setNetErrorView(new ErrorView(mContext));
         if (random == 0) {
             showLoadingView();
         } else if (random == 1) {

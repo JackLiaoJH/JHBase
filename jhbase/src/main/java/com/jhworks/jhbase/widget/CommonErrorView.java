@@ -111,7 +111,7 @@ public class CommonErrorView extends LinearLayout {
 
     public void showNoNetView() {
         setVisibility(VISIBLE);
-        setErrorVisible(true);
+        setErrorVisible(mNoNetView == null);
         showLoading(false);
         showNetError(false);
         showNoContent(false);
@@ -121,7 +121,7 @@ public class CommonErrorView extends LinearLayout {
     public void showNetErrorView() {
         setVisibility(VISIBLE);
         showLoading(false);
-        setErrorVisible(true);
+        setErrorVisible(mNetErrorView == null);
         showNoNet(false);
         showNetError(true);
         showNoContent(false);
@@ -129,7 +129,7 @@ public class CommonErrorView extends LinearLayout {
 
     public void showNoContentView() {
         setVisibility(VISIBLE);
-        setErrorVisible(true);
+        setErrorVisible(mNoContentView == null);
         showLoading(false);
         showNoNet(false);
         showNetError(false);

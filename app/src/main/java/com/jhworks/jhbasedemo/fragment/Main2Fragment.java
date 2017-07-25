@@ -1,7 +1,9 @@
 package com.jhworks.jhbasedemo.fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -9,6 +11,9 @@ import android.view.View;
 import com.jhworks.jhbase.base.BaseAdapter;
 import com.jhworks.jhbase.base.BaseFragment;
 import com.jhworks.jhbasedemo.R;
+import com.jhworks.jhbasedemo.activity.AVCloundActivity;
+import com.jhworks.jhbasedemo.activity.DialogActivity;
+import com.jhworks.jhbasedemo.activity.QiNiuActivity;
 import com.jhworks.jhbasedemo.adapter.Main2Adapter;
 
 import java.util.Arrays;
@@ -22,6 +27,8 @@ import java.util.List;
  */
 public class Main2Fragment extends BaseFragment implements BaseAdapter.OnItemClickListener<String> {
     private RecyclerView mRecyclerView;
+
+    private static final String EXTRA_CUSTOM_TABS_SESSION = "android.support.customtabs.extra.SESSION";
 
     @Override
     protected int getLayout() {
@@ -45,6 +52,23 @@ public class Main2Fragment extends BaseFragment implements BaseAdapter.OnItemCli
 
     @Override
     public void onItemClick(View view, String data, int position) {
+        switch (position) {
+            case 0:
+                openActivity(QiNiuActivity.class);
+                break;
+            case 1:
+                openActivity(AVCloundActivity.class);
+                break;
+            case 2:
+                openActivity(DialogActivity.class);
+                break;
+            case 3:
+                String url = "https://paul.kinlan.me/";
+                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                CustomTabsIntent customTabsIntent = builder.build();
+                customTabsIntent.launchUrl(getActivity(), Uri.parse(url));
 
+                break;
+        }
     }
 }

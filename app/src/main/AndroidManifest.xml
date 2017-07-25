@@ -25,6 +25,9 @@
         <activity android:name=".activity.TestActivity"/>
         <activity android:name=".activity.KeyStoreActivity"/>
         <activity android:name=".activity.ViewStatusActivity"/>
+        <activity android:name=".activity.QiNiuActivity"/>
+        <activity android:name=".activity.AVCloundActivity"/>
+        <activity android:name=".activity.DialogActivity"/>
     </application>
 
 </manifest>

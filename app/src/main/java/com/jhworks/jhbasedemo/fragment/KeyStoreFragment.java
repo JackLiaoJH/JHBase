@@ -7,8 +7,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.jhworks.jhbase.base.BaseFragment;
+import com.jhworks.jhbase.utils.EncryptUtils;
 import com.jhworks.jhbasedemo.EncryUtils;
 import com.jhworks.jhbasedemo.R;
+
+import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
 
 /**
  * @apiNote
@@ -38,29 +44,44 @@ public class KeyStoreFragment extends BaseFragment implements View.OnClickListen
         mEncrypting.setOnClickListener(this);
         mDecrypting.setOnClickListener(this);
 
+        try {
 
-        String jsonData = "1234567";
-        Log.e("MainActivity", "AES加密前json数据 ---->" + jsonData);
-        Log.e("MainActivity", "AES加密前json数据长度 ---->" + jsonData.length());
 
-        //生成一个动态key
-        String secretKey = EncryUtils.generateKey();
-        Log.e("MainActivity", "AES动态secretKey ---->" + secretKey);
+            String jsonData = "12345678";
+            Log.e("MainActivity", "AES加密前json数据 ---->" + jsonData);
+            Log.e("MainActivity", "AES加密前json数据长度 ---->" + jsonData.length());
 
-        //AES加密
-        long start = System.currentTimeMillis();
-        String encryStr = EncryUtils.encrypt(secretKey, jsonData);
-        long end = System.currentTimeMillis();
-        Log.e("MainActivity", "AES加密耗时 cost time---->" + (end - start));
-        Log.e("MainActivity", "AES加密后json数据 ---->" + encryStr);
-        Log.e("MainActivity", "AES加密后json数据长度 ---->" + encryStr.length());
 
-        //AES解密
-        start = System.currentTimeMillis();
-        String decryStr = EncryUtils.decrypt(secretKey, encryStr);
-        end = System.currentTimeMillis();
-        Log.e("MainActivity", "AES解密耗时 cost time---->" + (end - start));
-        Log.e("MainActivity", "AES解密后json数据 ---->" + decryStr);
+            KeyGenerator keyGen = KeyGenerator.getInstance("DES"); //密钥生成器
+            keyGen.init(56);//初始化密钥生成器
+            SecretKey secretKey = keyGen.generateKey();//生成密钥
+            byte[] key = secretKey.getEncoded();//密钥字节数组
+
+
+            //生成一个动态key
+//        String secretKey = EncryUtils.generateKey();
+            Log.e("MainActivity", "AES动态secretKey ---->" + secretKey);
+
+            //AES加密
+            long start = System.currentTimeMillis();
+//        String encryStr = EncryUtils.encrypt(secretKey, jsonData);
+            String encryStr = new String(EncryptUtils.encryptDES(jsonData.getBytes(), key));
+            long end = System.currentTimeMillis();
+            Log.e("MainActivity", "AES加密耗时 cost time---->" + (end - start));
+            Log.e("MainActivity", "AES加密后json数据 ---->" + encryStr);
+            Log.e("MainActivity", "AES加密后json数据长度 ---->" + encryStr.length());
+
+            //AES解密
+            start = System.currentTimeMillis();
+            String decryStr = new String(EncryptUtils.decryptDES(encryStr.getBytes(), key));
+//        String decryStr = EncryUtils.decrypt(secretKey, encryStr);
+
+            end = System.currentTimeMillis();
+            Log.e("MainActivity", "AES解密耗时 cost time---->" + (end - start));
+            Log.e("MainActivity", "AES解密后json数据 ---->" + decryStr);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
     }
 

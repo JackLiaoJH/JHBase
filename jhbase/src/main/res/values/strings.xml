@@ -4,4 +4,5 @@
     <string name="error_no_content">No Data</string>
     <string name="error_no_net">No Net</string>
     <string name="error_net">Network Error</string>
+    <string name="ok">OK</string>
 </resources>
