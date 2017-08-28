@@ -144,52 +144,60 @@ public abstract class BaseFragment extends Fragment
         startActivityForResult(intent, requestCode);
     }
 
-
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void showNoNetView() {
         checkErrorViewNull();
         mErrorView.showNoNetView();
         mContentView.setVisibility(View.GONE);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void showNoContentView() {
         checkErrorViewNull();
         mErrorView.showNoContentView();
         mContentView.setVisibility(View.GONE);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void showNetErrorView() {
         checkErrorViewNull();
         mErrorView.showNetErrorView();
         mContentView.setVisibility(View.GONE);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void showLoadingView() {
         checkErrorViewNull();
         mErrorView.showLoadingView();
         mContentView.setVisibility(View.GONE);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void showContentView() {
         checkErrorViewNull();
         mErrorView.setVisibility(View.GONE);
         mContentView.setVisibility(View.VISIBLE);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void setLoadingView(View loadingView) {
         checkErrorViewNull();
         mErrorView.setLoadingView(loadingView);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void setNoNetView(View noNetView) {
         checkErrorViewNull();
         mErrorView.setNoNetView(noNetView);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void setNetErrorView(View netErrorView) {
         checkErrorViewNull();
         mErrorView.setNetErrorView(netErrorView);
     }
 
+    /** 必须在{@link #onCreate(Bundle)}中调用{@link #showErrorView(boolean)} */
     protected void setNoContentView(View noContentView) {
         checkErrorViewNull();
         mErrorView.setNoContentView(noContentView);

@@ -28,6 +28,15 @@
         <activity android:name=".activity.QiNiuActivity"/>
         <activity android:name=".activity.AVCloundActivity"/>
         <activity android:name=".activity.DialogActivity"/>
+        <activity android:name=".mvp.MvpDemoActivity"/>
+
+
+        <activity
+            android:name=".activity.KeyBoardActivity"
+            android:windowSoftInputMode="adjustResize"
+          >
+
+        </activity>
     </application>
 
 </manifest>

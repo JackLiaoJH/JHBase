@@ -13,8 +13,10 @@ import com.jhworks.jhbase.base.BaseFragment;
 import com.jhworks.jhbasedemo.R;
 import com.jhworks.jhbasedemo.activity.AVCloundActivity;
 import com.jhworks.jhbasedemo.activity.DialogActivity;
+import com.jhworks.jhbasedemo.activity.KeyBoardActivity;
 import com.jhworks.jhbasedemo.activity.QiNiuActivity;
 import com.jhworks.jhbasedemo.adapter.Main2Adapter;
+import com.jhworks.jhbasedemo.mvp.MvpDemoActivity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -68,6 +70,12 @@ public class Main2Fragment extends BaseFragment implements BaseAdapter.OnItemCli
                 CustomTabsIntent customTabsIntent = builder.build();
                 customTabsIntent.launchUrl(getActivity(), Uri.parse(url));
 
+                break;
+            case 4:
+                openActivity(KeyBoardActivity.class);
+                break;
+            case 5:
+                openActivity(MvpDemoActivity.class);
                 break;
         }
     }

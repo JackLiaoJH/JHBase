@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+    >
+    <!--第一层次：底部输入框 和 消息显示框-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--输入框紧贴底部-->
+        <EditText android:id="@+id/et_input"
+                  android:layout_width="match_parent"
+                  android:layout_height="50dp"
+                  android:background="#ccc"
+                  android:text="gray"
+                  android:layout_alignParentBottom="true"
+            />
+        <!--消息显示框紧贴输入框顶部-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text"
+            android:gravity="bottom"
+            android:layout_above="@id/et_input"
+            />
+    </RelativeLayout>
+    <!--第二层次：顶部栏，因为采用了 FrameLayout，所以这一层次 相较于 上面描述的第一层次 来说更靠近用户-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00f"
+        android:text="blue"
+        />
+
+</FrameLayout>
