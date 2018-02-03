@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import com.jhworks.jhbase.base.BaseAdapter;
 import com.jhworks.jhbasedemo.R;
 import com.jhworks.jhbasedemo.module.Post;
-import com.jhworks.jhbasedemo.utils.GlideApp;
+//import com.jhworks.jhbasedemo.utils.GlideApp;
 
 /**
  * @apiNote
@@ -35,8 +35,8 @@ public class HomeHolder extends BaseAdapter.WrapperHolder<Post> {
         mParams.height = data.height;
 
 
-        GlideApp.with(mContext)
-                .load(data.imageUrl)
-                .into(mItemIv);
+//        GlideApp.with(mContext)
+//                .load(data.imageUrl)
+//                .into(mItemIv);
     }
 }

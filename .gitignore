@@ -1,0 +1,7 @@
+.idea/
+app/build/
+build/
+.gradle/
+jhbase/jhbase.iml
+gradle/wrapper/
+app/app.iml
