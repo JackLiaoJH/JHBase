@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.jhworks.jhbase.base.BaseFragment;
-import com.jhworks.jhbase.utils.EncryptUtils;
-import com.jhworks.jhbasedemo.EncryUtils;
 import com.jhworks.jhbasedemo.R;
 
 import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+
+import cn.jhworks.utilscore.utils.EncryptUtils;
 
 /**
  * @apiNote

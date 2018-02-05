@@ -1,1 +1,1 @@
-include ':app',':jhbase'
+include ':app',':jhbase', ':utilscore'

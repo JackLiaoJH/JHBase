@@ -5,19 +5,14 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatButton;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.jhworks.jhbase.base.BaseFragment;
 import com.jhworks.jhbase.utils.LogUtils;
-import com.jhworks.jhbase.utils.RandomUtils;
 import com.jhworks.jhbase.utils.ToastUtils;
 import com.jhworks.jhbasedemo.R;
-import com.jhworks.jhbasedemo.widget.ErrorView;
 
 /**
  * @apiNote

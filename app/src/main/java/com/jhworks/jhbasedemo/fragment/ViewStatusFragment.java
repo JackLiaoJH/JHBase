@@ -6,9 +6,10 @@ import android.view.View;
 
 import com.jhworks.jhbase.base.BaseFragment;
 import com.jhworks.jhbase.utils.LogUtils;
-import com.jhworks.jhbase.utils.RandomUtils;
 import com.jhworks.jhbasedemo.R;
 import com.jhworks.jhbasedemo.widget.ErrorView;
+
+import cn.jhworks.utilscore.utils.RandomUtils;
 
 /**
  * @apiNote

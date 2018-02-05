@@ -7,14 +7,14 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.jhworks.jhbase.base.BaseFragment;
-import com.jhworks.jhbase.utils.RandomUtils;
 import com.jhworks.jhbasedemo.R;
 import com.jhworks.jhbasedemo.adapter.HomeAdapter;
 import com.jhworks.jhbasedemo.module.Post;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+import cn.jhworks.utilscore.utils.RandomUtils;
 
 /**
  * @apiNoteØ

@@ -7,6 +7,8 @@ import com.jhworks.jhbase.base.BaseActivity;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import cn.jhworks.utilscore.UtilsCore;
+
 /**
  * @apiNote BaseApp
  * @since 2017/7/17
@@ -25,6 +27,9 @@ public class BaseApp extends Application {
     public void onCreate() {
         super.onCreate();
         sApp = this;
+        UtilsCore.get()
+                .init(this)
+                .debug(BuildConfig.DEBUG);
     }
 
 

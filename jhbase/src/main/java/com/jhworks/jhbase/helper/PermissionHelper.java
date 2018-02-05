@@ -10,10 +10,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 
-import com.jhworks.jhbase.utils.ListUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.jhworks.utilscore.utils.ListUtils;
 
 /**
  * desc:   权限申请辅助
