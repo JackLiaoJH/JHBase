@@ -18,6 +18,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 /**
  * File Utils
@@ -638,4 +640,92 @@ public class FileUtils {
                 == PackageManager.PERMISSION_GRANTED;
     }
 
+
+    /**
+     * 获取文件扩展名
+     *
+     * @param filename 文件路径
+     * @return 扩展名，如：zip,如果文件没有扩展名返回null
+     */
+    public static String getExtensionName(String filename) {
+        if ((filename != null) && (filename.length() > 0)) {
+            int dot = filename.lastIndexOf('.');
+            if ((dot > -1) && (dot < (filename.length() - 1))) {
+                return filename.substring(dot + 1);
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 获取不带扩展名的文件名
+     *
+     * @param filename 目标文件路径
+     * @return 文件名
+     */
+    public static String getFileNameNoEx(String filename) {
+        if ((filename != null) && (filename.length() > 0)) {
+            int dot = filename.lastIndexOf('.');
+            if ((dot > -1) && (dot < (filename.length()))) {
+                return filename.substring(0, dot);
+            }
+        }
+        return filename;
+    }
+
+    /**
+     * 获取文件路径的最后文件名（不带扩展名）
+     *
+     * @param filename 目标文件路径
+     * @return 最后文件名（不带扩展名）
+     */
+    public static String getLastFileNameNoEx(String filename) {
+        if ((filename != null) && (filename.length() > 0)) {
+            int separator = filename.lastIndexOf(File.separator);
+            if (separator > -1 && separator < filename.length()) {
+                String lastName = filename.substring(separator + 1);
+                int dot = lastName.lastIndexOf('.');
+                if ((dot > -1) && (dot < (lastName.length()))) {
+                    return lastName.substring(0, dot);
+                } else {
+                    return lastName;
+                }
+            }
+        }
+        return filename;
+    }
+
+    /**
+     * 获取zip报里面的文件或文件夹列表集合
+     *
+     * @param zipFilePath    zip路径
+     * @param bContainFolder 是否包含文件夹
+     * @param bContainFile   是否包含文件
+     * @return zip里面的文件列表集合
+     */
+    public static List<File> getZipFileList(String zipFilePath, boolean bContainFolder, boolean bContainFile) {
+        List<File> fileList = new ArrayList<>();
+        ZipInputStream inZip = null;
+        try {
+            inZip = new ZipInputStream(new FileInputStream(zipFilePath));
+            ZipEntry zipEntry;
+            String szName;
+            while ((zipEntry = inZip.getNextEntry()) != null) {
+                szName = zipEntry.getName();
+                if (zipEntry.isDirectory()) {
+                    szName = szName.substring(0, szName.length() - 1);
+                    if (bContainFolder)
+                        fileList.add(new File(szName));
+                } else {
+                    if (bContainFile)
+                        fileList.add(new File(szName));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            IOUtils.close(inZip);
+        }
+        return fileList;
+    }
 }
