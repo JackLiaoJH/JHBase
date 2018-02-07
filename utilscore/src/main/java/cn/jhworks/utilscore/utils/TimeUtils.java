@@ -1,4 +1,4 @@
-package com.jhworks.jhbase.utils;
+package cn.jhworks.utilscore.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

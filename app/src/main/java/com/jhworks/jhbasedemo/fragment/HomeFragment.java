@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 
 import com.jhworks.jhbase.base.BaseFragment;
@@ -55,5 +56,19 @@ public class HomeFragment extends BaseFragment {
         HomeAdapter homeAdapter = new HomeAdapter(mContext);
         mRecyclerView.setAdapter(homeAdapter);
         homeAdapter.setDataList(list);
+
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+        for (StackTraceElement stackTraceElement : stackTrace) {
+            String s = new StringBuilder(stackTraceElement.getClassName())
+                    .append("  ")
+                    .append(stackTraceElement.getFileName())
+                    .append("  ")
+                    .append(stackTraceElement.getMethodName())
+                    .append("  ")
+                    .append(stackTraceElement.getLineNumber())
+                    .toString();
+            Log.e("liao", s);
+        }
+
     }
 }

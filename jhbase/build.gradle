@@ -52,5 +52,7 @@ dependencies {
     implementation deps.support.v4
     implementation deps.support.design
 
+    implementation deps.okio
+
     implementation project(':utilscore')
 }
